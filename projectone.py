@@ -1,7 +1,7 @@
 #Sergiy Pliss
 #Project 1 Timeboxed Coding
 #ST-CIS-3296-001-38591-202403
-import random
+import math as m
 
 population = 1000
 budone = 0
@@ -18,25 +18,25 @@ for x in range(years):
 
 	print("Input birth rate.")	
 	birth = float(input())
-	while 1.0 >= birth >= 2.0 :
+	while  birth > 2.0 or birth < 1:
 		birth = float(input())
 	population = population + population*(birth/100)
 
 	print("Input death rate.")	
 	death = float(input())
-	while .5 >= death >= 1.5:
+	while death > 1.5 or death < .5:
 		death = float(input())
 	population = population - population*(death/100)
 
 	print("Input migration rate.")	
-	while -3 > death > 4:
+	while  migration > 4 or migration < -3:
 		migration = float(input())
 	population = population + population*(migration/100)
 
-	print("Year :" + str(2023 +x) + "Population :" + str(population) + "Budget: " + str(population*2347))
+	print("Year : " + str(2023 +x+1) + " Population : " + str(m.ceil(population)) + " Budget: " + str(population*2350))
 	if x == 0:
-		budone = population*2347
+		budone = population*2350
 	if x == years:
-		budtwo = population*2347
+		budtwo = population*2350
 
-print("Average difference in budget: " +str((budtwo-budone)/years))
+print("Average difference in budget: " +str((budone-budtwo)/years))
