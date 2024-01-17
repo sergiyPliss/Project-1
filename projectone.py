@@ -1,6 +1,7 @@
 #Sergiy Pliss, Jordan Santoli,Christopher Christmas, Declan Schaeffer,
 #Project 1 Timeboxed Coding
 #ST-CIS-3296-001-38591-202403
+#https://github.com/sergiyPliss/Project-1
 import math as m
 
 population = 1000
@@ -41,7 +42,7 @@ for x in range(years):
 	print("\n Year : " + str(2023 +x+1) + " Population : " + str(m.ceil(population)) + " Budget: " + str(population*2350) + "\n")
 	if x == 0:
 		budone = population*2350
-	if x == years:
+	if x == years-1:
 		budtwo = population*2350
 
-print("Average difference in budget: " +str((budone-budtwo)/years))
+print("Average difference in budget: " +str((budtwo-budone)/years))
