@@ -1,4 +1,4 @@
-#Sergiy Pliss
+#Sergiy Pliss, Jordan Santoli,Christopher Christmas, Declan Schaeffer,
 #Project 1 Timeboxed Coding
 #ST-CIS-3296-001-38591-202403
 import math as m
@@ -10,6 +10,9 @@ birth = 0
 death = 0
 migration = 0
 years = 0
+a = 0
+b = 0
+c = 0
 
 print("Enter number of years.")
 years = int(input())
@@ -20,20 +23,22 @@ for x in range(years):
 	birth = float(input())
 	while  birth > 2.0 or birth < 1:
 		birth = float(input())
-	population = population + population*(birth/100)
+	a =  population*(birth/100)
 
 	print("Input death rate.")	
 	death = float(input())
 	while death > 1.5 or death < .5:
 		death = float(input())
-	population = population - population*(death/100)
+	b =  population*(death/100)
 
 	print("Input migration rate.")	
+	migration = float(input())
 	while  migration > 4 or migration < -3:
 		migration = float(input())
-	population = population + population*(migration/100)
+	c =  population*(migration/100)
 
-	print("Year : " + str(2023 +x+1) + " Population : " + str(m.ceil(population)) + " Budget: " + str(population*2350))
+	population = population + a - b + c
+	print("\n Year : " + str(2023 +x+1) + " Population : " + str(m.ceil(population)) + " Budget: " + str(population*2350) + "\n")
 	if x == 0:
 		budone = population*2350
 	if x == years:
